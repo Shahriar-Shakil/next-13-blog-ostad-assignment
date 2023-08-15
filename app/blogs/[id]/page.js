@@ -18,3 +18,12 @@ export default async function SingleBlog({ params }) {
     </div>
   );
 }
+
+// Return a list of `params` to populate the [id] dynamic segment
+export async function generateStaticParams() {
+  const blogs = await getBlogs();
+
+  return blogs.posts.map((post) => ({
+    id: "" + post.id,
+  }));
+}
