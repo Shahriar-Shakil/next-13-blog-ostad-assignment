@@ -4,7 +4,6 @@ import blogData from "@/data/blogData.json";
 
 export default function SingleBlog({ params }) {
   const blogContent = blogData.posts?.find((item) => item.id == params.id);
-  console.log(blogContent);
   return (
     <div className={styles.mainContainer}>
       <div className={styles.blogPost}>
